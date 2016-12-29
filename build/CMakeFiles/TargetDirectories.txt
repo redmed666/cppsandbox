@@ -1,0 +1,2 @@
+/Users/mehdikhemir/Documents/Codes/Cpp/myApp/build/CMakeFiles/MyApp_automoc.dir
+/Users/mehdikhemir/Documents/Codes/Cpp/myApp/build/CMakeFiles/MyApp.dir

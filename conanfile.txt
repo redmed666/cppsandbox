@@ -1,0 +1,16 @@
+[requires]
+Boost/1.60.0@lasote/stable
+libcurl/7.50.3@lasote/stable
+gtest/1.7.0@lasote/stable
+json/1.0.0@paulobrizolara/stable
+mongo-cxx-driver/3.1.1@med/stable
+
+[options]
+gtest:shared=True
+
+[generators]
+cmake
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./bin
