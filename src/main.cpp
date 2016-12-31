@@ -3,9 +3,9 @@
 
 #include "mainwindow.hpp"
 #include "MongoClient/MongoClient.hpp"
-#include <sstream>
-
+#include "util/util.hpp"
 // QT android CMake => https://github.com/LaurentGomila/qt-android-cmake
+
 
 int main(int argc, char** argv) {
     /*
@@ -17,23 +17,19 @@ int main(int argc, char** argv) {
     MongoClient::MongoClient myClient("mongodb://raspberrypi.lan:27017", "recettesDb","Référence;Nom;Origine;Saison;V. papier;Temps;Remarques;Catégories;");
     std::vector<std::string> collections = myClient.getCollections();
 
-    for(auto collection : collections) {
-        std::cout << collection << std::endl;
+    std::vector<std::vector<std::vector<std::string>>> v_all_documents_parsed;
+
+    for (auto collection : collections){
+        auto v_documents = myClient.getDocuments(collection.c_str());
+
+        std::vector<std::vector<std::string>> v_documents_parsed;
+
+        for(auto doc : v_documents) {
+            auto doc_parsed = Util::parseString(doc, ';');
+            v_documents_parsed.push_back(doc_parsed);
+        }
+
+        v_all_documents_parsed.push_back(v_documents_parsed);
     }
-    auto v_documents = myClient.getDocuments("apero");
-
-    for(auto doc : v_documents) {
-        std::cout << doc << std::endl;
-        std::stringstream iss(doc);
-
-         while(iss.good())
-         {
-             std::string SingleLine;
-             getline(iss,SingleLine,';');
-             std::cout << SingleLine << std::endl;
-             // Process SingleLine here
-         }
-    }
-
     //return app.exec();
 }

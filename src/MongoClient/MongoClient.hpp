@@ -15,13 +15,29 @@ using bsoncxx::builder::stream::finalize;
 using bsoncxx::builder::stream::open_array;
 using bsoncxx::builder::stream::open_document;
 
+/** @brief Mongo client wrapper
+  * Mongo client wrapper helps creating a client for a mongo db
+  */
+
 class MongoClient {
 public:
-    MongoClient();
+    /**
+      * Constructor
+      * @param uri Address of the mongo db
+      * @param db DataBase you want to connect to
+      * @param field_name Crappy stuff to put but necessary in order to extract the info of the documents
+      */
     MongoClient(std::string uri, std::string db, std::string field_name);
     ~MongoClient();
 
+    /**
+    * Get all the collections of the selected database
+    */
     std::vector<std::string> getCollections();
+
+    /**
+    * Get all documents from the collection selected
+    */
     std::vector<std::string> getDocuments(std::string in_collection);
 
 private:
