@@ -1,19 +1,32 @@
 #include <QApplication>
 #include <QPushButton>
+#include <QQmlComponent>
+#include <QQmlEngine>
+#include <QQmlProperty>
+#include <QDebug>
+#include <QQuickView>
 
-#include "mainwindow.hpp"
+#include "Mainwindow/mainwindow.hpp"
 #include "MongoClient/MongoClient.hpp"
 #include "util/util.hpp"
 // QT android CMake => https://github.com/LaurentGomila/qt-android-cmake
 
 
 int main(int argc, char** argv) {
-    /*
+
     QApplication app(argc, argv);
+    /*
     Mainwindow *mainwindow = Mainwindow::instance();
     mainwindow->show();
     */
 
+    QQmlEngine engine;
+    QQmlComponent component(&engine, QUrl("qrc:/qml/MyItem.qml"));
+    QObject *object = component.create();
+
+    qDebug() << "Property value:" << QQmlProperty::read(object, "someNumber").toInt();
+
+/*
     MongoClient::MongoClient myClient("mongodb://raspberrypi.lan:27017", "recettesDb","Référence;Nom;Origine;Saison;V. papier;Temps;Remarques;Catégories;");
     std::vector<std::string> collections = myClient.getCollections();
 
@@ -31,5 +44,8 @@ int main(int argc, char** argv) {
 
         v_all_documents_parsed.push_back(v_documents_parsed);
     }
-    //return app.exec();
+    */
+    delete object;
+
+    return app.exec();
 }

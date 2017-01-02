@@ -1,0 +1,117 @@
+\hypertarget{class_mongo_client}{}\section{Mongo\+Client Class Reference}
+\label{class_mongo_client}\index{Mongo\+Client@{Mongo\+Client}}
+
+
+Mongo client wrapper Mongo client wrapper helps creating a client for a mongo db.  
+
+
+
+
+{\ttfamily \#include $<$Mongo\+Client.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mongo_client_a99c002f0875bafe7c72147aaed9086c0}{Mongo\+Client} (std\+::string uri, std\+::string db, std\+::string field\+\_\+name)
+\item 
+\hyperlink{class_mongo_client_aecb48220a940f8782861573a8b5d8692}{$\sim$\+Mongo\+Client} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_mongo_client_af6a3081ec6f89b3f60eb4412807b172c}{get\+Collections} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_mongo_client_ad5a0b939338a63f5dacc665056c8b330}{get\+Documents} (std\+::string in\+\_\+collection)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mongocxx\+::uri $\ast$ \hyperlink{class_mongo_client_a0d5c8e1f21ef69de175ab07d7f074a22}{\+\_\+uri}
+\item 
+mongocxx\+::client $\ast$ \hyperlink{class_mongo_client_a5219540804d9229ab6a1da001c26a068}{\+\_\+client}
+\item 
+mongocxx\+::database $\ast$ \hyperlink{class_mongo_client_a1c48eda1d75c705898a8c04608f3f434}{\+\_\+db}
+\item 
+mongocxx\+::cursor $\ast$ \hyperlink{class_mongo_client_acee6b5e0d56b6ce9b99d363b7dc9d414}{\+\_\+cursor\+\_\+db}
+\item 
+mongocxx\+::collection \hyperlink{class_mongo_client_a68d5a96bba159d62203881ad6cc01912}{\+\_\+collection}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_mongo_client_a0fe1acf7025dfc3ddaea718c5ab03746}{\+\_\+v\+\_\+collections}
+\item 
+std\+::string \hyperlink{class_mongo_client_ab3ded8c67af64c8b6b7a0a52da53a40f}{\+\_\+field\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mongo client wrapper Mongo client wrapper helps creating a client for a mongo db. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_mongo_client_a99c002f0875bafe7c72147aaed9086c0}{}\index{Mongo\+Client@{Mongo\+Client}!Mongo\+Client@{Mongo\+Client}}
+\index{Mongo\+Client@{Mongo\+Client}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{Mongo\+Client(std\+::string uri, std\+::string db, std\+::string field\+\_\+name)}]{\setlength{\rightskip}{0pt plus 5cm}Mongo\+Client\+::\+Mongo\+Client (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{uri, }
+\item[{std\+::string}]{db, }
+\item[{std\+::string}]{field\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{class_mongo_client_a99c002f0875bafe7c72147aaed9086c0}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em uri} & Address of the mongo db \\
+\hline
+{\em db} & Data\+Base you want to connect to \\
+\hline
+{\em field\+\_\+name} & Crappy stuff to put but necessary in order to extract the info of the documents \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_mongo_client_aecb48220a940f8782861573a8b5d8692}{}\index{Mongo\+Client@{Mongo\+Client}!````~Mongo\+Client@{$\sim$\+Mongo\+Client}}
+\index{````~Mongo\+Client@{$\sim$\+Mongo\+Client}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{$\sim$\+Mongo\+Client()}]{\setlength{\rightskip}{0pt plus 5cm}Mongo\+Client\+::$\sim$\+Mongo\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_mongo_client_aecb48220a940f8782861573a8b5d8692}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_mongo_client_af6a3081ec6f89b3f60eb4412807b172c}{}\index{Mongo\+Client@{Mongo\+Client}!get\+Collections@{get\+Collections}}
+\index{get\+Collections@{get\+Collections}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{get\+Collections()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ Mongo\+Client\+::get\+Collections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_mongo_client_af6a3081ec6f89b3f60eb4412807b172c}
+Get all the collections of the selected database \hypertarget{class_mongo_client_ad5a0b939338a63f5dacc665056c8b330}{}\index{Mongo\+Client@{Mongo\+Client}!get\+Documents@{get\+Documents}}
+\index{get\+Documents@{get\+Documents}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{get\+Documents(std\+::string in\+\_\+collection)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ Mongo\+Client\+::get\+Documents (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{in\+\_\+collection}
+\end{DoxyParamCaption}
+)}\label{class_mongo_client_ad5a0b939338a63f5dacc665056c8b330}
+Get all documents from the collection selected 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_mongo_client_a5219540804d9229ab6a1da001c26a068}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+client@{\+\_\+client}}
+\index{\+\_\+client@{\+\_\+client}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+client}]{\setlength{\rightskip}{0pt plus 5cm}mongocxx\+::client$\ast$ Mongo\+Client\+::\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_a5219540804d9229ab6a1da001c26a068}
+\hypertarget{class_mongo_client_a68d5a96bba159d62203881ad6cc01912}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+collection@{\+\_\+collection}}
+\index{\+\_\+collection@{\+\_\+collection}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+collection}]{\setlength{\rightskip}{0pt plus 5cm}mongocxx\+::collection Mongo\+Client\+::\+\_\+collection\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_a68d5a96bba159d62203881ad6cc01912}
+\hypertarget{class_mongo_client_acee6b5e0d56b6ce9b99d363b7dc9d414}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+cursor\+\_\+db@{\+\_\+cursor\+\_\+db}}
+\index{\+\_\+cursor\+\_\+db@{\+\_\+cursor\+\_\+db}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+cursor\+\_\+db}]{\setlength{\rightskip}{0pt plus 5cm}mongocxx\+::cursor$\ast$ Mongo\+Client\+::\+\_\+cursor\+\_\+db\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_acee6b5e0d56b6ce9b99d363b7dc9d414}
+\hypertarget{class_mongo_client_a1c48eda1d75c705898a8c04608f3f434}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+db@{\+\_\+db}}
+\index{\+\_\+db@{\+\_\+db}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+db}]{\setlength{\rightskip}{0pt plus 5cm}mongocxx\+::database$\ast$ Mongo\+Client\+::\+\_\+db\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_a1c48eda1d75c705898a8c04608f3f434}
+\hypertarget{class_mongo_client_ab3ded8c67af64c8b6b7a0a52da53a40f}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+field\+\_\+name@{\+\_\+field\+\_\+name}}
+\index{\+\_\+field\+\_\+name@{\+\_\+field\+\_\+name}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+field\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Mongo\+Client\+::\+\_\+field\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_ab3ded8c67af64c8b6b7a0a52da53a40f}
+\hypertarget{class_mongo_client_a0d5c8e1f21ef69de175ab07d7f074a22}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+uri@{\+\_\+uri}}
+\index{\+\_\+uri@{\+\_\+uri}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+uri}]{\setlength{\rightskip}{0pt plus 5cm}mongocxx\+::uri$\ast$ Mongo\+Client\+::\+\_\+uri\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_a0d5c8e1f21ef69de175ab07d7f074a22}
+\hypertarget{class_mongo_client_a0fe1acf7025dfc3ddaea718c5ab03746}{}\index{Mongo\+Client@{Mongo\+Client}!\+\_\+v\+\_\+collections@{\+\_\+v\+\_\+collections}}
+\index{\+\_\+v\+\_\+collections@{\+\_\+v\+\_\+collections}!Mongo\+Client@{Mongo\+Client}}
+\subsubsection[{\+\_\+v\+\_\+collections}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ Mongo\+Client\+::\+\_\+v\+\_\+collections\hspace{0.3cm}{\ttfamily [private]}}\label{class_mongo_client_a0fe1acf7025dfc3ddaea718c5ab03746}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/mehdikhemir/\+Documents/\+Codes/\+Cpp/my\+App/src/\+Mongo\+Client/\hyperlink{_mongo_client_8hpp}{Mongo\+Client.\+hpp}\item 
+/\+Users/mehdikhemir/\+Documents/\+Codes/\+Cpp/my\+App/src/\+Mongo\+Client/\hyperlink{_mongo_client_8cpp}{Mongo\+Client.\+cpp}\end{DoxyCompactItemize}
