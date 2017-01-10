@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 2.8.12)
 project(MyApp)
 
 #set some variables
+enable_testing()
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
@@ -41,6 +42,7 @@ foreach (_headerFile ${MyApp_HEADERS})
 endforeach()
 list(APPEND MyApp_SOURCES src/resources.qrc)
 list(REMOVE_DUPLICATES MyApp_INCLUDE_DIRS)
+file(GLOB_RECURSE untittest_myapp_SOURCES "test/*.cpp")
 
 #include some directories
 include_directories("./src")
@@ -52,3 +54,9 @@ add_executable (MyApp ${MyApp_SOURCES})
 target_compile_features(MyApp PRIVATE cxx_range_for)
 target_link_libraries(MyApp ${CONAN_LIBS})
 target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+
+#Test folder
+add_executable (untittest_myapp ${untittest_myapp_SOURCES})
+target_link_libraries(untittest_myapp ${CONAN_LIBS})
+target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+add_test (UnitTest bin/untittest_myapp)
