@@ -42,6 +42,7 @@ foreach (_headerFile ${MyApp_HEADERS})
 endforeach()
 list(APPEND MyApp_SOURCES src/resources.qrc)
 list(REMOVE_DUPLICATES MyApp_INCLUDE_DIRS)
+
 file(GLOB_RECURSE untittest_myapp_SOURCES "test/*.cpp")
 
 #include some directories
