@@ -1,4 +1,4 @@
-#include "mainwindow.hpp"
+#include "mainwindow/mainwindow.hpp"
 
 Mainwindow *Mainwindow::instance() {
     if(!s_instance) {

@@ -1,4 +1,4 @@
-#include "MongoClient/MongoClient.hpp"
+#include "mongoclient/mongoclient.hpp"
 
 MongoClient::MongoClient(std::string uri, std::string db, std::string field_name){
     _uri = new mongocxx::uri(uri);
