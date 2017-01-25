@@ -6,7 +6,7 @@ namespace CurlCpp {
         try {
             _curlInitCode = curl_global_init(CURL_GLOBAL_DEFAULT);
             if(_curlInitCode != CURLE_OK) {
-                const char *pszErrorCode = curl_easy_strerror(this->_curlInitCode);
+                const char *pszErrorCode = curl_easy_strerror(_curlInitCode);
                 std::string errorMessageGlobalInit = "Failed during curl_global_init with error message = " + std::string(pszErrorCode);
                 throw CurlCppException(errorMessageGlobalInit);
             }
@@ -21,19 +21,41 @@ namespace CurlCpp {
         }
     }
 
+    CurlCpp::CurlCpp(const CurlCpp& source) {
+
+        // allocate variables
+        CurlCpp::CurlCpp();
+
+        // copy values
+        operator = (source);
+    }
+
+    const CurlCpp& CurlCpp::operator = (const CurlCpp &source) {
+        _headers = source._headers;
+        _curlInitCode = source._curlInitCode;
+        _curlHandler = source._curlHandler;
+        _url = source._url;
+        _responseBody = source._responseBody;
+        return *this;
+    }
+
     CurlCpp::~CurlCpp() {
         curl_global_cleanup();
     }
 
     void CurlCpp::setUrl(std::string urlPort) {
-        this->_url = urlPort;
-        curl_easy_setopt(this->getHandler(), CURLOPT_URL, urlPort.c_str());
+        _url = urlPort;
+        curl_easy_setopt(getHandler(), CURLOPT_URL, urlPort.c_str());
+    }
+
+    std::string CurlCpp::getUrl() {
+        return _url;
     }
 
     int CurlCpp::performRequest() {
         int responseCode = 0;
         try {
-            if("NULL" == this->_url) {
+            if(_url.empty()) {
                 throw CurlCppException("No URL defined.");
             }
 
@@ -46,12 +68,12 @@ namespace CurlCpp {
             std::string responseBody;
 
             typedef size_t(*CURL_WRITEFUNCTION_PTR)(void*, size_t, size_t, void*);
-            this->setopt(CURLOPT_WRITEFUNCTION, static_cast<CURL_WRITEFUNCTION_PTR>(WriteCallback));
-            this->setopt(CURLOPT_WRITEDATA, &responseBody);
-            curl_easy_perform(this->_curlHandler->getHandler());
-            curl_easy_getinfo(this->_curlHandler->getHandler(), CURLINFO_RESPONSE_CODE, &responseCode);
+            setopt(CURLOPT_WRITEFUNCTION, static_cast<CURL_WRITEFUNCTION_PTR>(WriteCallback));
+            setopt(CURLOPT_WRITEDATA, &responseBody);
+            curl_easy_perform(_curlHandler->getHandler());
+            curl_easy_getinfo(_curlHandler->getHandler(), CURLINFO_RESPONSE_CODE, &responseCode);
 
-            this->_responseBody = responseBody;
+            _responseBody = responseBody;
             if(responseCode != 200) {
                 std::string errorMessage = "HTTP Request failed. Response code is " + boost::lexical_cast<std::string>(responseCode);
                 throw CurlCppException(errorMessage);
@@ -66,23 +88,23 @@ namespace CurlCpp {
     }
 
     std::string CurlCpp::getResponseBody() {
-        return this->_responseBody;
+        return _responseBody;
     }
 
     curl_slist* CurlCpp::getHeaders() {
-        return this->_headers->getHeaders();
+        return _headers->getHeaders();
     }
 
     CURL* CurlCpp::getHandler() {
-        return this->_curlHandler->getHandler();
+        return _curlHandler->getHandler();
     }
 
     std::vector<std::string> CurlCpp::getVecStrHeaders() {
-        return this->_headers->getVecStrHeaders();
+        return _headers->getVecStrHeaders();
     }
 
     void CurlCpp::appendHeaders(std::string header) {
-        this->_headers->appendHeaders(header);
+        _headers->appendHeaders(header);
         return;
     }
 

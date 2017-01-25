@@ -2,15 +2,29 @@
 
 namespace CurlCpp {
     CurlHandlerCpp::CurlHandlerCpp() {
-        this->_curlHandler = curl_easy_init();
-        if(!this->_curlHandler) {
+        _curlHandler = curl_easy_init();
+        if(!_curlHandler) {
             std::string errorMessageEasyInit = "Failed during curl_easy_init";
             throw CurlCppException(errorMessageEasyInit);
         }
     }
 
+    CurlHandlerCpp::CurlHandlerCpp(const CurlHandlerCpp& source) {
+
+        // allocate variables
+        CurlHandlerCpp::CurlHandlerCpp();
+
+        // copy values
+        operator = (source);
+    }
+
+    const CurlHandlerCpp& CurlHandlerCpp::operator= (const CurlHandlerCpp &source) {
+        _curlHandler = source._curlHandler;
+        return *this;
+    }
+
     CurlHandlerCpp::~CurlHandlerCpp() {
-        if(this->_curlHandler) { curl_easy_cleanup(this->_curlHandler); }
+        if(_curlHandler) { curl_easy_cleanup(_curlHandler); }
     }
 
     CURL* CurlHandlerCpp::getHandler() {

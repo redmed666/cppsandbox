@@ -8,10 +8,12 @@ namespace CurlCpp {
     class CurlHeadersCpp {
     public:
         CurlHeadersCpp();
+        CurlHeadersCpp(const CurlHeadersCpp& source);
         ~CurlHeadersCpp();
         curl_slist* getHeaders();
         std::vector<std::string> getVecStrHeaders();
         void appendHeaders(std::string header);
+        const CurlHeadersCpp& operator= (const CurlHeadersCpp &source);
 
     private:
         curl_slist* _headers;

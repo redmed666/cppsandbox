@@ -1,45 +1,85 @@
-#include <QApplication>
-#include <QPushButton>
-#include <QQmlComponent>
-#include <QQmlEngine>
-#include <QQmlProperty>
+#include <QtGui/QGuiApplication>
+#include <QtGui/QScreen>
+#include <QtQml/QQmlEngine>
+#include <QtQml/QQmlComponent>
+#include <QtQuick/QQuickWindow>
+#include <QtCore/QUrl>
 #include <QDebug>
-#include <QQuickView>
 
 #include "mainwindow/mainwindow.hpp"
 #include "mongoclient/mongoclient.hpp"
 #include "util/util.hpp"
 #include "curlcpp/curlcpp.hpp"
+#include "opensslcpp/opensslcpp.hpp"
+#include <thread>
+#include <ctime>
+#include <openssl/crypto.h>
+
+#include "boost/lexical_cast.hpp"
 
 // QT android CMake => https://github.com/LaurentGomila/qt-android-cmake
 
-
 int main(int argc, char** argv) {
-    CurlCpp::CurlCpp myCurlObject;
-    myCurlObject.appendHeaders("Another: yes");
-    myCurlObject.appendHeaders("Host: example.com");
-    myCurlObject.setUrl("http://localhost:8000");
-    myCurlObject.setopt(CURLOPT_HTTPHEADER, myCurlObject.getHeaders());
-    myCurlObject.setopt(CURLOPT_SSL_VERIFYPEER, 1L);
-    int responseCode = myCurlObject.performRequest();
-    std::cout << "=========== Response body ==============\n" << myCurlObject.getResponseBody() << std::endl;
+    OpensslCpp::OpensslCpp myOpensslObject;
+
+    myOpensslObject.newBIO("inputbio", BIO_s_file());
+    myOpensslObject.newBIOFp("outputbio", stdout, BIO_NOCLOSE);
+    myOpensslObject.loadCRL(argv[1]);
+    myOpensslObject.printRevokedCerts();
+
+    /*
+    myOpensslObject.loadCert(std::string(argv[1]));
+    std::shared_ptr<OpensslCpp::OpensslX509Cpp> certObject = myOpensslObject.getCert();
+    certObject->printCertificate();
+    */
+    //myOpensslObject.printPublicKey("outputbio");
 
     return 0;
+
     /*
-    QApplication app(argc, argv);
-    Mainwindow *mainwindow = Mainwindow::instance();
-    mainwindow->show();
-    return app.exec();
+    std::vector<std::string> urls{"http://localhost:8000/test1","http://localhost:8000/test2", "http://localhost:8000/", "http://localhost:8000/test4"};
+    std::vector<CurlCpp::CurlCpp> vecCurlObjects;
+
+    for(int i = 0; i < 1; ++i) {
+        urls.push_back(("http://localhost:8000/"+boost::lexical_cast<std::string>(i)));
+    }
+
+    for(auto url : urls) {
+        CurlCpp::CurlCpp tmpCurlObject;
+        tmpCurlObject.appendHeaders("Another: yes");
+        std::string hostHeader = "Host: " + url;
+        tmpCurlObject.appendHeaders(hostHeader);
+        tmpCurlObject.setUrl(url);
+        tmpCurlObject.setopt(CURLOPT_HTTPHEADER, (tmpCurlObject.getHeaders()));
+        tmpCurlObject.setopt(CURLOPT_SSL_VERIFYPEER, 1L);
+        vecCurlObjects.push_back(tmpCurlObject);
+    }
+
+    std::vector<std::thread> requestThreaded;
+    for(auto& curlObject : vecCurlObjects) {
+        requestThreaded.push_back(std::thread(&CurlCpp::CurlCpp::performRequest, curlObject));
+    }
+
+    for(auto& myThread : requestThreaded) {
+        myThread.join();
+    }
+
+    return 0;
     */
-
     /*
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
+    foreach (QScreen * screen, QGuiApplication::screens())
+        screen->setOrientationUpdateMask(Qt::LandscapeOrientation | Qt::PortraitOrientation |
+                                         Qt::InvertedLandscapeOrientation | Qt::InvertedPortraitOrientation);
     QQmlEngine engine;
-    QQmlComponent component(&engine, QUrl("qrc:/qml/MyItem.qml"));
-    QObject *object = component.create();
-
-    qDebug() << "Property value:" << QQmlProperty::read(object, "someNumber").toInt();
-    delete object;
+    QQmlComponent component(&engine);
+    QQuickWindow::setDefaultAlphaBuffer(true);
+    component.loadUrl(QUrl("qrc:///qml/mainwindow.qml"));
+    if ( component.isReady() ) {
+        component.create();
+    } else {
+        qWarning() << component.errorString();
+    }
     return app.exec();
     */
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['util',['Util',['../namespace_util.html',1,'']]]
+  ['curlcpp',['CurlCpp',['../namespace_curl_cpp.html',1,'']]]
 ];

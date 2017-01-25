@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsestring',['parseString',['../namespace_util.html#a86f16dfe1bb012de7a48f5e19ffa9279',1,'Util']]]
+  ['headers',['headers',['../class_curl_cpp_1_1_curl_cpp.html#ada5ea161e25d1f657d0646067d843afc',1,'CurlCpp::CurlCpp']]]
 ];

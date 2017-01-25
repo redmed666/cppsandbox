@@ -11,8 +11,10 @@
 -I/Users/mehdikhemir/.conan/data/libbson/1.5.1/med/stable/package/a47fd1f3db1f83c7cb0da8cea82a3e1683ae91ea/include
 -I/Users/mehdikhemir/.conan/data/zlib/1.2.8/lasote/stable/package/dfaeed675a0f450dbc88fe8262d9d89b3e8509b0/include
 -I.././src
--I../src/Mainwindow
--I../src/MongoClient
+-I../src/curlcpp
+-I../src/mainwindow
+-I../src/mongoclient
+-I../src/opensslcpp
 -I../src/util
 -I/usr/local/opt/qt5/lib/QtWidgets.framework
 -I/usr/local/opt/qt5/lib/QtWidgets.framework/Headers

@@ -2,7 +2,10 @@
 <RCC version="1.0">
 
 <qresource>
-    <file>qml/myitem.qml</file>
+    <file>qml/mainwindow.qml</file>
+    <file>qml/Board.qml</file>
+    <file>qml/MyMenuBar.qml</file>
+    <file>qml/MyButton.qml</file>
 </qresource>
 
 </RCC>

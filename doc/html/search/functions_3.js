@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['mainwindow',['Mainwindow',['../class_mainwindow.html#a9ca049b84f17c87a57b53e418b1c40e3',1,'Mainwindow']]],
-  ['mongoclient',['MongoClient',['../class_mongo_client.html#a99c002f0875bafe7c72147aaed9086c0',1,'MongoClient']]]
+  ['getcollections',['getCollections',['../class_mongo_client.html#af6a3081ec6f89b3f60eb4412807b172c',1,'MongoClient']]],
+  ['getdocuments',['getDocuments',['../class_mongo_client.html#ad5a0b939338a63f5dacc665056c8b330',1,'MongoClient']]],
+  ['getheaders',['getHeaders',['../class_curl_cpp_1_1_curl_cpp.html#a9fad186212d2258e1f26e2d4b9dad498',1,'CurlCpp::CurlCpp']]],
+  ['getvecstrheaders',['getVecStrHeaders',['../class_curl_cpp_1_1_curl_cpp.html#a0603b5b5a02bb86d2a2cb9e7e2385561',1,'CurlCpp::CurlCpp']]]
 ];

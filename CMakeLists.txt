@@ -53,8 +53,8 @@ include_directories(${MyApp_INCLUDE_DIRS})
 #QT5_ADD_RESOURCES(MyApp main.cpp ./src/resources.qrc)
 add_executable (MyApp ${MyApp_SOURCES})
 target_compile_features(MyApp PRIVATE cxx_range_for)
-target_link_libraries(MyApp ${CONAN_LIBS})
 target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+target_link_libraries(MyApp ${CONAN_LIBS})
 
 #Test folder
 add_executable (untittest_myapp ${untittest_myapp_SOURCES})

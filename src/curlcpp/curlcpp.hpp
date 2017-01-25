@@ -10,8 +10,10 @@ namespace CurlCpp {
     class CurlCpp {
     public:
         CurlCpp();
+        CurlCpp(const CurlCpp &source);
         ~CurlCpp();
         void setUrl(std::string urlPort);
+        std::string getUrl();
         int performRequest();
         std::string getResponseBody();
         curl_slist* getHeaders();
@@ -19,14 +21,16 @@ namespace CurlCpp {
         std::vector<std::string> getVecStrHeaders();
         void appendHeaders(std::string header);
 
+        const CurlCpp& operator= (const CurlCpp &source);
+
         template<typename T, typename TCurl>
-        void setopt(TCurl curlOption, T input) { curl_easy_setopt(this->_curlHandler->getHandler(), curlOption, input); }
+        void setopt(TCurl curlOption, T input) { curl_easy_setopt(_curlHandler->getHandler(), curlOption, input); }
 
     private:
-        std::auto_ptr<CurlHeadersCpp> _headers;
+        std::shared_ptr<CurlHeadersCpp> _headers;
         CURLcode _curlInitCode;
-        std::auto_ptr<CurlHandlerCpp> _curlHandler;
-        std::string _url = "NULL";
+        std::shared_ptr<CurlHandlerCpp> _curlHandler;
+        std::string _url;
         std::string _responseBody;
     };
 }
