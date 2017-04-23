@@ -13,28 +13,29 @@
 #include "opensslcpp/opensslcpp.hpp"
 #include <thread>
 #include <ctime>
-#include <openssl/crypto.h>
-
-#include "boost/lexical_cast.hpp"
 
 // QT android CMake => https://github.com/LaurentGomila/qt-android-cmake
 
 int main(int argc, char** argv) {
+    /*
+    const clock_t begin_time = clock();
+
     OpensslCpp::OpensslCpp myOpensslObject;
-
-    myOpensslObject.newBIO("inputbio", BIO_s_file());
-    myOpensslObject.newBIOFp("outputbio", stdout, BIO_NOCLOSE);
     myOpensslObject.loadCRL(argv[1]);
-    myOpensslObject.printRevokedCerts();
-
+    myOpensslObject.loadCert(argv[2]);
+    myOpensslObject.printCertificate();
+    //myOpensslObject.printCertificate();
+    //myOpensslObject.printCRLRevokedCerts();
+    //std::cout << myOpensslObject.verifyRevokationCert() << std::endl;
+    std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC << std::endl;
+    */
     /*
     myOpensslObject.loadCert(std::string(argv[1]));
-    std::shared_ptr<OpensslCpp::OpensslX509Cpp> certObject = myOpensslObject.getCert();
-    certObject->printCertificate();
+    myOpensslObject.printCertSerialNumber();
     */
     //myOpensslObject.printPublicKey("outputbio");
 
-    return 0;
+    //return 0;
 
     /*
     std::vector<std::string> urls{"http://localhost:8000/test1","http://localhost:8000/test2", "http://localhost:8000/", "http://localhost:8000/test4"};
@@ -66,7 +67,7 @@ int main(int argc, char** argv) {
 
     return 0;
     */
-    /*
+
     QGuiApplication app(argc, argv);
     foreach (QScreen * screen, QGuiApplication::screens())
         screen->setOrientationUpdateMask(Qt::LandscapeOrientation | Qt::PortraitOrientation |
@@ -81,7 +82,7 @@ int main(int argc, char** argv) {
         qWarning() << component.errorString();
     }
     return app.exec();
-    */
+
 
     /*
     MongoClient::MongoClient myClient("mongodb://raspberrypi.lan:27017", "recettesDb","Référence;Nom;Origine;Saison;V. papier;Temps;Remarques;Catégories;");

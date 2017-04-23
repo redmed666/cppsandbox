@@ -5,7 +5,8 @@
 #include <openssl/pem.h>
 #include <mutex>
 #include <vector>
-
+#include <unordered_map>
+#include <boost/lexical_cast.hpp>
 #include "opensslcpp/opensslcppexception.hpp"
 
 namespace OpensslCpp {
@@ -15,6 +16,7 @@ namespace OpensslCpp {
         ~OpensslX509CRLCpp();
         void loadCRL(std::string filename);
         X509_CRL* getX509CRL();
+        std::vector<std::string> getSerialRevokedCerts();
         void printCRL();
         void printRevokedCerts();
 
@@ -23,6 +25,6 @@ namespace OpensslCpp {
         X509_NAME* _issuer = nullptr;
         long _version;
         std::mutex _crlMutex;
-        std::vector<X509_REVOKED*> _revokedCerts;
+        std::unordered_map<std::string, X509_REVOKED*> _revokedCerts;
     };
 }

@@ -23,12 +23,16 @@ namespace OpensslCpp {
         _issuer = X509_CRL_get_issuer(_crl);
         _version = X509_CRL_get_version(_crl);
         STACK_OF(X509_REVOKED)* revokedTmp = _crl->crl->revoked;
-
+        X509_REVOKED *entry = nullptr;
+        ASN1_INTEGER* asn1Serial = nullptr;
+        BIGNUM* bnser = nullptr;
         for (int j = 0; j < sk_X509_REVOKED_num(revokedTmp); j++) {
-            X509_REVOKED *entry = sk_X509_REVOKED_value(revokedTmp, j);
-            _revokedCerts.push_back(entry);
+            entry = sk_X509_REVOKED_value(revokedTmp, j);
+            asn1Serial = entry->serialNumber;
+            bnser = ASN1_INTEGER_to_BN(asn1Serial, NULL);
+            _revokedCerts[std::string(BN_bn2hex(bnser))] = entry;
         }
-        
+
     }
 
     void OpensslX509CRLCpp::printCRL() {
@@ -36,12 +40,16 @@ namespace OpensslCpp {
     }
 
     void OpensslX509CRLCpp::printRevokedCerts() {
-        BIO* outputbio = BIO_new_fp(stdout,BIO_NOCLOSE);
-        for(auto element : _revokedCerts) {
-            ASN1_INTEGER* asn1Serial = element->serialNumber;
-            i2a_ASN1_INTEGER(outputbio, asn1Serial);
-            BIO_printf(outputbio, "\n");
+        for(auto& element : _revokedCerts) {
+            std::cout << element.first << std::endl;
         }
-        BIO_free_all(outputbio);
+    }
+
+    std::vector<std::string> OpensslX509CRLCpp::getSerialRevokedCerts() {
+        std::vector<std::string> result;
+        for (auto& element : _revokedCerts) {
+            result.push_back(element.first);
+        }
+        return result;
     }
 }
