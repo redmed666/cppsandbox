@@ -8,14 +8,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTORCC ON)
-set(QT_USE_QTGUI TRUE)
-set(QT_USE_QTXML TRUE)
+#set(QT_USE_QTGUI TRUE)
+#set(QT_USE_QTXML TRUE)
+set(EXTERNAL_PROJECT_DIR "$ENV{HOME}/Documents/Codes/3rdparty")
 
 #find the packages
-find_package(Qt5Widgets REQUIRED)
-find_package(Qt5QML REQUIRED)
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Quick REQUIRED)
+#find_package(Qt5Widgets REQUIRED)
+#find_package(Qt5QML REQUIRED)
+#find_package(Qt5Core REQUIRED)
+#find_package(Qt5Quick REQUIRED)
 find_package(Doxygen)
 
 #Doxygen things
@@ -27,10 +28,6 @@ add_custom_target(doc
   COMMENT "Generating API documentation with Doxygen" VERBATIM
 )
 endif(DOXYGEN_FOUND)
-
-#conan usage
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
 
 #Recursively look for the src files
 file(GLOB_RECURSE MyApp_SOURCES "src/*.cpp")
@@ -45,19 +42,32 @@ list(REMOVE_DUPLICATES MyApp_INCLUDE_DIRS)
 
 file(GLOB_RECURSE untittest_myapp_SOURCES "test/*.cpp")
 
-#include some directories
-include_directories("./src")
-include_directories(${MyApp_INCLUDE_DIRS})
-
 #compilation + linkage
 #QT5_ADD_RESOURCES(MyApp main.cpp ./src/resources.qrc)
 add_executable (MyApp ${MyApp_SOURCES})
 target_compile_features(MyApp PRIVATE cxx_range_for)
-target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
-target_link_libraries(MyApp ${CONAN_LIBS})
+#target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+
+#external dep
+include(deps/CMakeLists-Openssl.cmake)
+include(deps/CMakeLists-Gtest.cmake)
+include(deps/CMakeLists-Curl.cmake)
+include(deps/CMakeLists-Qt5.cmake)
+
+#include some directories
+include_directories("./src")
+include_directories(${MyApp_INCLUDE_DIRS})
+
+#linkage
+target_link_libraries(MyApp libQt5Core)
+target_link_libraries(MyApp libcurl)
+target_link_libraries(MyApp libssl)
+target_link_libraries(MyApp libcrypto)
+target_link_libraries(MyApp gtest)
+
 
 #Test folder
-add_executable (untittest_myapp ${untittest_myapp_SOURCES})
-target_link_libraries(untittest_myapp ${CONAN_LIBS})
-target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
-add_test (UnitTest bin/untittest_myapp)
+#add_executable (untittest_myapp ${untittest_myapp_SOURCES})
+#target_link_libraries(untittest_myapp ${CONAN_LIBS})
+#target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+#add_test (UnitTest bin/untittest_myapp)

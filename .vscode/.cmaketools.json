@@ -1,0 +1,113 @@
+{
+  "variant": {
+    "label": "Release",
+    "keywordSettings": {
+      "buildType": "release"
+    },
+    "description": "Enable optimizations, omit debug info"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Release",
+        "projects": [
+          {
+            "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+            "name": "MyApp",
+            "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+            "targets": [
+              {
+                "artifacts": [
+                  "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build/MyApp"
+                ],
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "src/resources.qrc"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG   -std=gnu++14",
+                    "includePath": [
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/include"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/include"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/include"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/./src"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/curlcpp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/opensslcpp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/util"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/curlcpp/curlcpp.cpp",
+                      "src/curlcpp/curlcppexception.cpp",
+                      "src/curlcpp/curlhandlercpp.cpp",
+                      "src/curlcpp/curlheaderscpp.cpp",
+                      "src/main.cpp",
+                      "src/opensslcpp/opensslbiocpp.cpp",
+                      "src/opensslcpp/opensslcpp.cpp",
+                      "src/opensslcpp/opensslcppexception.cpp",
+                      "src/opensslcpp/opensslx509cpp.cpp",
+                      "src/opensslcpp/opensslx509crlcpp.cpp",
+                      "src/util/util.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "MyApp",
+                "linkLanguageFlags": "-O3 -DNDEBUG",
+                "linkLibraries": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/libQt5Core.a /Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/lib/libcurl.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libssl.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libcrypto.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/googletest-1.8.0/lib/libgtest.dylib",
+                "linkerLanguage": "CXX",
+                "name": "MyApp",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "EXECUTABLE"
+              },
+              {
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/doc",
+                      "build/CMakeFiles/doc.rule"
+                    ]
+                  }
+                ],
+                "fullName": "doc",
+                "name": "doc",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "UTILITY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.6335812148621802",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

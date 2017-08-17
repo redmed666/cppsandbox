@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Darwin32",
+            "intelliSenseMode": "clang-x64",
+            "includePath": [
+                "/Users/mehdikhemir/Documents/Codes/3rdparty/*/include"
+            ],
+            "browse": {
+                "path": [
+                    "/Users/mehdikhemir/Documents/Codes/3rdparty/*/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 2
+}
