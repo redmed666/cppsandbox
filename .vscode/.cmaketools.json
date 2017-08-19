@@ -18,22 +18,6 @@
             "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
             "targets": [
               {
-                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
-                "fileGroups": [
-                  {
-                    "isGenerated": true,
-                    "sources": [
-                      "build/CMakeFiles/MyApp_automoc",
-                      "build/CMakeFiles/MyApp_automoc.rule"
-                    ]
-                  }
-                ],
-                "fullName": "MyApp_automoc",
-                "name": "MyApp_automoc",
-                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
-                "type": "UTILITY"
-              },
-              {
                 "artifacts": [
                   "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build/MyApp"
                 ],
@@ -68,6 +52,9 @@
                       },
                       {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/curlcpp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/mainwindow"
                       },
                       {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/opensslcpp"
@@ -176,6 +163,9 @@
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/curlcpp"
                       },
                       {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/mainwindow"
+                      },
+                      {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/opensslcpp"
                       },
                       {
@@ -246,6 +236,7 @@
                       "src/curlcpp/curlhandlercpp.cpp",
                       "src/curlcpp/curlheaderscpp.cpp",
                       "src/main.cpp",
+                      "src/mainwindow/mainwindow.cpp",
                       "src/opensslcpp/opensslbiocpp.cpp",
                       "src/opensslcpp/opensslcpp.cpp",
                       "src/opensslcpp/opensslcppexception.cpp",
@@ -278,13 +269,29 @@
                 "name": "doc",
                 "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
                 "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/MyApp_automoc",
+                      "build/CMakeFiles/MyApp_automoc.rule"
+                    ]
+                  }
+                ],
+                "fullName": "MyApp_automoc",
+                "name": "MyApp_automoc",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "UTILITY"
               }
             ]
           }
         ]
       }
     ],
-    "cookie": "0.287433426462006",
+    "cookie": "0.943237940518854",
     "inReplyTo": "codemodel",
     "type": "reply"
   }
