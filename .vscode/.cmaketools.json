@@ -18,6 +18,38 @@
             "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
             "targets": [
               {
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/doc",
+                      "build/CMakeFiles/doc.rule"
+                    ]
+                  }
+                ],
+                "fullName": "doc",
+                "name": "doc",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/MyApp_automoc",
+                      "build/CMakeFiles/MyApp_automoc.rule"
+                    ]
+                  }
+                ],
+                "fullName": "MyApp_automoc",
+                "name": "MyApp_automoc",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "UTILITY"
+              },
+              {
                 "artifacts": [
                   "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build/MyApp"
                 ],
@@ -253,45 +285,13 @@
                 "name": "MyApp",
                 "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
                 "type": "EXECUTABLE"
-              },
-              {
-                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
-                "fileGroups": [
-                  {
-                    "isGenerated": true,
-                    "sources": [
-                      "build/CMakeFiles/doc",
-                      "build/CMakeFiles/doc.rule"
-                    ]
-                  }
-                ],
-                "fullName": "doc",
-                "name": "doc",
-                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
-                "type": "UTILITY"
-              },
-              {
-                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
-                "fileGroups": [
-                  {
-                    "isGenerated": true,
-                    "sources": [
-                      "build/CMakeFiles/MyApp_automoc",
-                      "build/CMakeFiles/MyApp_automoc.rule"
-                    ]
-                  }
-                ],
-                "fullName": "MyApp_automoc",
-                "name": "MyApp_automoc",
-                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
-                "type": "UTILITY"
               }
             ]
           }
         ]
       }
     ],
-    "cookie": "0.943237940518854",
+    "cookie": "0.3582765227394371",
     "inReplyTo": "codemodel",
     "type": "reply"
   }

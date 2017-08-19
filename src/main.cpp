@@ -1,20 +1,20 @@
 
+#include <thread>
+#include <ctime>
+
 #include <QtGui/QGuiApplication>
 #include <QtGui/QScreen>
 #include <QtQml/QQmlEngine>
 #include <QtQml/QQmlComponent>
 #include <QtQuick/QQuickWindow>
 #include <QtCore/QUrl>
-
-//#include <QDebug>
+#include <QDebug>
 
 #include "mainwindow/mainwindow.hpp"
 //#include "mongoclient/mongoclient.hpp"
 #include "util/util.hpp"
 #include "curlcpp/curlcpp.hpp"
 #include "opensslcpp/opensslcpp.hpp"
-#include <thread>
-#include <ctime>
 
 // QT android CMake => https://github.com/LaurentGomila/qt-android-cmake
 
