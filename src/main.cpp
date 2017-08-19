@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 
     //return 0;
 
-    
+    /*
     std::vector<std::string> urls{"http://localhost:8000/test1","http://localhost:8000/test2", "http://localhost:8000/", "http://localhost:8000/test4"};
     std::vector<CurlCpp::CurlCpp> vecCurlObjects;
 
@@ -75,8 +75,8 @@ int main(int argc, char **argv)
     }
 
     return 0;
+    */
     
-    /*
     QGuiApplication app(argc, argv);
     foreach (QScreen *screen, QGuiApplication::screens())
         screen->setOrientationUpdateMask(Qt::LandscapeOrientation | Qt::PortraitOrientation | Qt::InvertedLandscapeOrientation | Qt::InvertedPortraitOrientation);
@@ -93,7 +93,7 @@ int main(int argc, char **argv)
         qWarning() << component.errorString();
     }
     return app.exec();
-    */
+    
     /*
     MongoClient::MongoClient myClient("mongodb://raspberrypi.lan:27017", "recettesDb","Référence;Nom;Origine;Saison;V. papier;Temps;Remarques;Catégories;");
     std::vector<std::string> collections = myClient.getCollections();

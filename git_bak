@@ -1,0 +1,5 @@
+* 16fb83a - (HEAD) Removed qt stuffs from main.cpp (Fri Aug 18 14:49:40 2017) <med>
+* 47dd0e5 - Removed a useles line in CMaleLists.txt (Fri Aug 18 14:48:41 2017) <med>
+* 7f463ce - (master) Removed all Qt stuffs (couldn't find a way to make it works with external dep and doesn't work anymore when installing Qt... Maybe it was ok only with macp
+ort or brew? Dunno...) (Fri Aug 18 14:23:52 2017) <med>
+* f2ef110 - (origin/master, origin/HEAD)

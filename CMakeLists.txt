@@ -46,7 +46,6 @@ file(GLOB_RECURSE untittest_myapp_SOURCES "test/*.cpp")
 #QT5_ADD_RESOURCES(MyApp main.cpp ./src/resources.qrc)
 add_executable (MyApp ${MyApp_SOURCES})
 target_compile_features(MyApp PRIVATE cxx_range_for)
-#target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
 
 #external dep
 include(deps/CMakeLists-Openssl.cmake)
@@ -59,11 +58,13 @@ include_directories("./src")
 include_directories(${MyApp_INCLUDE_DIRS})
 
 #linkage
-target_link_libraries(MyApp libQt5Core)
+#target_link_libraries(MyApp libQt5Core)
 target_link_libraries(MyApp libcurl)
 target_link_libraries(MyApp libssl)
 target_link_libraries(MyApp libcrypto)
 target_link_libraries(MyApp gtest)
+target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+
 
 
 #Test folder

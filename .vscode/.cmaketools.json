@@ -24,13 +24,16 @@
                 "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
                 "fileGroups": [
                   {
-                    "isGenerated": false,
-                    "sources": [
-                      "src/resources.qrc"
-                    ]
-                  },
-                  {
-                    "compileFlags": "-O3 -DNDEBUG   -std=gnu++14",
+                    "compileFlags": "-O3 -DNDEBUG   -fPIC -std=gnu++14",
+                    "defines": [
+                      "QT_CORE_LIB",
+                      "QT_GUI_LIB",
+                      "QT_NETWORK_LIB",
+                      "QT_NO_DEBUG",
+                      "QT_QML_LIB",
+                      "QT_QUICK_LIB",
+                      "QT_WIDGETS_LIB"
+                    ],
                     "includePath": [
                       {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build"
@@ -45,7 +48,110 @@
                         "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/include"
                       },
                       {
-                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/include"
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/./src"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/curlcpp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/opensslcpp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/util"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtWidgets.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtWidgets.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtGui.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtGui.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/System/Library/Frameworks/OpenGL.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtCore.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtCore.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/./mkspecs/macx-clang"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQml.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQml.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtNetwork.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtNetwork.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQuick.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQuick.framework/Headers"
+                      }
+                    ],
+                    "isGenerated": true,
+                    "language": "CXX",
+                    "sources": [
+                      "build/MyApp_automoc.cpp",
+                      "build/MyApp_automoc.dir/qrc_resources_QWNPDIM2E3IFIN.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "src/resources.qrc"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG   -fPIC -std=gnu++14",
+                    "defines": [
+                      "QT_CORE_LIB",
+                      "QT_GUI_LIB",
+                      "QT_NETWORK_LIB",
+                      "QT_NO_DEBUG",
+                      "QT_QML_LIB",
+                      "QT_QUICK_LIB",
+                      "QT_WIDGETS_LIB"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/include"
+                      },
+                      {
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/include"
                       },
                       {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/./src"
@@ -58,6 +164,62 @@
                       },
                       {
                         "path": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/src/util"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtWidgets.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtWidgets.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtGui.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtGui.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/System/Library/Frameworks/OpenGL.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtCore.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtCore.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/./mkspecs/macx-clang"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQml.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQml.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtNetwork.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtNetwork.framework/Headers"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQuick.framework"
+                      },
+                      {
+                        "isSystem": true,
+                        "path": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQuick.framework/Headers"
                       }
                     ],
                     "isGenerated": false,
@@ -79,7 +241,7 @@
                 ],
                 "fullName": "MyApp",
                 "linkLanguageFlags": "-O3 -DNDEBUG",
-                "linkLibraries": "/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/libQt5Core.a /Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/lib/libcurl.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libssl.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libcrypto.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/googletest-1.8.0/lib/libgtest.dylib",
+                "linkLibraries": "-Wl,-rpath,/Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib  /Users/mehdikhemir/Documents/Codes/3rdparty/curl-7.54.1/lib/libcurl.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libssl.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/openssl-1.0.2k/libcrypto.1.0.0.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/googletest-1.8.0/lib/libgtest.dylib /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtWidgets.framework/QtWidgets /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQuick.framework/QtQuick /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtQml.framework/QtQml /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtNetwork.framework/QtNetwork /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtGui.framework/QtGui /Users/mehdikhemir/Documents/Codes/3rdparty/qt5-5.9.1/lib/QtCore.framework/QtCore",
                 "linkerLanguage": "CXX",
                 "name": "MyApp",
                 "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
@@ -100,13 +262,29 @@
                 "name": "doc",
                 "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
                 "type": "UTILITY"
+              },
+              {
+                "buildDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": true,
+                    "sources": [
+                      "build/CMakeFiles/MyApp_automoc",
+                      "build/CMakeFiles/MyApp_automoc.rule"
+                    ]
+                  }
+                ],
+                "fullName": "MyApp_automoc",
+                "name": "MyApp_automoc",
+                "sourceDirectory": "/Users/mehdikhemir/Documents/Codes/Cpp/myfirstcppapp",
+                "type": "UTILITY"
               }
             ]
           }
         ]
       }
     ],
-    "cookie": "0.6335812148621802",
+    "cookie": "0.9588124216874594",
     "inReplyTo": "codemodel",
     "type": "reply"
   }
