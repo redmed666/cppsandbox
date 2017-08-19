@@ -8,7 +8,7 @@
 
 //#include <QDebug>
 
-//#include "mainwindow/mainwindow.hpp"
+#include "mainwindow/mainwindow.hpp"
 //#include "mongoclient/mongoclient.hpp"
 #include "util/util.hpp"
 #include "curlcpp/curlcpp.hpp"
