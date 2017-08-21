@@ -47,6 +47,9 @@ include(deps/CMakeLists-Openssl.cmake)
 include(deps/CMakeLists-Gtest.cmake)
 include(deps/CMakeLists-Curl.cmake)
 include(deps/CMakeLists-Qt5.cmake)
+include(deps/CMakeLists-libbson.cmake)
+include(deps/CMakeLists-MongoC.cmake)
+include(deps/CMakeLists-MongoCXX.cmake)
 
 #include some directories
 include_directories("./src")
@@ -58,6 +61,10 @@ target_link_libraries(MyApp libssl)
 target_link_libraries(MyApp libcrypto)
 target_link_libraries(MyApp gtest)
 target_link_libraries(MyApp Qt5::Widgets Qt5::Qml Qt5::Quick)
+target_link_libraries(MyApp libbson)
+target_link_libraries(MyApp libmongocxx)
+target_link_libraries(MyApp libmongoc)
+
 
 #Test folder
 #add_executable (untittest_myapp ${untittest_myapp_SOURCES})
