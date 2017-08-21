@@ -3,6 +3,7 @@ include(ExternalProject)
 #===== GTSET =====#
 set(GTEST_VERSION 1.8.0)
 set(GTEST "${EXTERNAL_PROJECT_DIR}/googletest-${GTEST_VERSION}")
+list(APPEND CMAKE_ARGS_GTEST  "-DCMAKE_INSTALL_PREFIX=${GTEST}" "-DBUILD_SHARED_LIBS=ON")
 
 find_file(GTEST_IN_DEPS NAMES lib/libgtest.dylib PATHS ${GTEST}/)
 
@@ -18,9 +19,8 @@ else()
         UPDATE_COMMAND ""
         GIT_TAG release-${GTEST_VERSION}
         INSTALL_COMMAND make install
-        CMAKE_ARGS
-            "-DCMAKE_INSTALL_PREFIX=${GTEST}"
-            "-DBUILD_SHARED_LIBS=ON"
+        CMAKE_ARGS ${CMAKE_ARGS_GTEST}
+            
     )
 endif()
 
